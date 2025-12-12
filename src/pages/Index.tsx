@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import DifferentiatorSection from '@/components/DifferentiatorSection';
@@ -7,6 +8,14 @@ import PublicationsSection from '@/components/PublicationsSection';
 import Footer from '@/components/Footer';
 
 const Index = () => {
+  useEffect(() => {
+    // Enable smooth scrolling globally
+    document.documentElement.style.scrollBehavior = 'smooth';
+    return () => {
+      document.documentElement.style.scrollBehavior = 'auto';
+    };
+  }, []);
+
   return (
     <main className="min-h-screen bg-background overflow-x-hidden">
       <Navbar />

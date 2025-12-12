@@ -1,20 +1,26 @@
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Play } from 'lucide-react';
-import heroCollage from '@/assets/hero-collage.jpg';
+import bannerCollage from '@/assets/banner-collage.png';
 
 const HeroSection = () => {
+  const scrollToSection = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center pt-24 overflow-hidden">
       {/* Background image with blur overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src={heroCollage}
+          src={bannerCollage}
           alt="Small business owners success stories"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover scale-110 blur-sm"
         />
-        <div className="blur-overlay" />
-        {/* Additional gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-hero opacity-60" />
+        <div className="absolute inset-0 bg-background/70 backdrop-blur-md" />
+        <div className="absolute inset-0 bg-gradient-hero opacity-40" />
       </div>
       
       {/* Floating glass elements */}
@@ -43,12 +49,12 @@ const HeroSection = () => {
           {/* Subtext */}
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-10 leading-relaxed animate-fade-in" style={{ animationDelay: '0.2s' }}>
             Transform your operations with AI-powered insights and automation solutions 
-            that deliver measurable results. Trusted by forward-thinking businesses worldwide.
+            that deliver measurable results.
           </p>
           
           {/* CTAs */}
           <div className="flex flex-wrap items-center gap-5 animate-fade-in" style={{ animationDelay: '0.3s' }}>
-            <Button variant="hero" size="xl">
+            <Button variant="hero" size="xl" onClick={() => scrollToSection('#contact')}>
               Contact Us
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
@@ -79,12 +85,15 @@ const HeroSection = () => {
       </div>
       
       {/* Scroll indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-pulse">
+      <button 
+        onClick={() => scrollToSection('#about')}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-pulse hover:opacity-70 transition-opacity cursor-pointer"
+      >
         <span className="text-xs text-muted-foreground uppercase tracking-widest">Scroll</span>
         <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex items-start justify-center p-1.5">
           <div className="w-1.5 h-3 rounded-full bg-olive animate-bounce" />
         </div>
-      </div>
+      </button>
     </section>
   );
 };
