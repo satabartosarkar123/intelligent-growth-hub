@@ -15,120 +15,116 @@ const Footer = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
-    // Handle form submission
   };
 
   return (
-    <footer className="bg-charcoal text-cream relative overflow-hidden">
+    <footer id="contact" className="bg-gradient-dark text-white relative overflow-hidden">
       {/* Background elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-olive/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-sea-glass/5 rounded-full blur-3xl" />
+      <div className="absolute top-0 right-0 w-80 h-80 bg-accent/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-64 h-64 bg-secondary/5 rounded-full blur-3xl" />
       
-      <AnimatedSection className="py-20 md:py-28">
+      <AnimatedSection className="py-16 md:py-20">
         <div className="container mx-auto px-6 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16">
+          <div className="grid lg:grid-cols-2 gap-12">
             {/* Left - Contact Form */}
             <div>
-              <h3 className="text-3xl md:text-4xl font-serif font-semibold mb-6">
-                Let's Start a{' '}
-                <span className="text-olive-light">Conversation</span>
+              <div className="golden-line mb-4 opacity-60" />
+              <h3 className="text-headline font-serif mb-4">
+                Start a{' '}
+                <span className="text-accent">Conversation</span>
               </h3>
-              <p className="text-cream/70 mb-8 max-w-md">
-                Ready to transform your business with intelligent automation? 
-                Get in touch with our team.
+              <p className="text-body text-white/60 mb-6 max-w-sm">
+                Ready to transform with intelligent automation?
               </p>
 
-              <form onSubmit={handleSubmit} className="space-y-5">
-                <div className="grid md:grid-cols-2 gap-5">
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="grid md:grid-cols-2 gap-4">
                   <Input
-                    placeholder="Your Name"
+                    placeholder="Name"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="bg-cream/5 border-cream/10 text-cream placeholder:text-cream/40 focus:border-olive-light h-12 rounded-xl"
+                    className="bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-accent h-10 rounded-lg text-sm"
                   />
                   <Input
                     type="email"
-                    placeholder="Email Address"
+                    placeholder="Email"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="bg-cream/5 border-cream/10 text-cream placeholder:text-cream/40 focus:border-olive-light h-12 rounded-xl"
+                    className="bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-accent h-10 rounded-lg text-sm"
                   />
                 </div>
                 <Textarea
-                  placeholder="Tell us about your project..."
+                  placeholder="Message..."
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="bg-cream/5 border-cream/10 text-cream placeholder:text-cream/40 focus:border-olive-light min-h-32 rounded-xl resize-none"
+                  className="bg-white/5 border-white/10 text-white placeholder:text-white/40 focus:border-accent min-h-24 rounded-lg resize-none text-sm"
                 />
-                <Button type="submit" variant="hero" className="w-full md:w-auto">
-                  Send Message
-                  <Send className="w-4 h-4 ml-2" />
+                <Button type="submit" variant="hero" size="sm">
+                  Send
+                  <Send className="w-3.5 h-3.5 ml-1.5" />
                 </Button>
               </form>
             </div>
 
             {/* Right - Info & Social */}
-            <div className="lg:pl-12">
-              <div className="mb-10">
-                {/* Logo */}
-                <div className="flex items-center gap-3 mb-8">
-                  <div className="w-12 h-12 rounded-xl bg-olive flex items-center justify-center">
-                    <span className="text-primary-foreground font-serif font-bold text-xl">T</span>
-                  </div>
-                  <span className="text-2xl font-serif font-semibold">TDSC</span>
+            <div className="lg:pl-8">
+              {/* Logo */}
+              <div className="flex items-center gap-2.5 mb-6">
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+                  <span className="text-primary-foreground font-serif font-semibold text-lg">T</span>
                 </div>
-                
-                <p className="text-cream/70 mb-8 max-w-sm">
-                  Data Driven Intelligent Automation for Business Growth. 
-                  Empowering organizations to achieve more through intelligent solutions.
-                </p>
+                <span className="text-xl font-serif font-medium">TDSC</span>
               </div>
+              
+              <p className="text-body text-white/60 mb-6 max-w-xs">
+                Intelligent automation for business growth.
+              </p>
 
               {/* Contact Info */}
-              <div className="space-y-4 mb-10">
-                <div className="flex items-center gap-4 text-cream/70 hover:text-olive-light transition-colors cursor-pointer">
-                  <MapPin className="w-5 h-5" />
+              <div className="space-y-3 mb-8">
+                <div className="flex items-center gap-3 text-caption text-white/50 hover:text-accent transition-colors cursor-pointer">
+                  <MapPin className="w-4 h-4" />
                   <span>Innovation Hub, Tech City</span>
                 </div>
-                <div className="flex items-center gap-4 text-cream/70 hover:text-olive-light transition-colors cursor-pointer">
-                  <Mail className="w-5 h-5" />
+                <div className="flex items-center gap-3 text-caption text-white/50 hover:text-accent transition-colors cursor-pointer">
+                  <Mail className="w-4 h-4" />
                   <span>hello@tdsc.com</span>
                 </div>
-                <div className="flex items-center gap-4 text-cream/70 hover:text-olive-light transition-colors cursor-pointer">
-                  <Phone className="w-5 h-5" />
+                <div className="flex items-center gap-3 text-caption text-white/50 hover:text-accent transition-colors cursor-pointer">
+                  <Phone className="w-4 h-4" />
                   <span>+1 (555) 123-4567</span>
                 </div>
               </div>
 
               {/* Social Links */}
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-3">
                 <a
                   href="#"
-                  className="w-12 h-12 rounded-xl bg-cream/5 flex items-center justify-center hover:bg-olive transition-colors duration-300 group"
+                  className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center hover:bg-accent transition-colors duration-300 group"
                 >
-                  <Linkedin className="w-5 h-5 text-cream/70 group-hover:text-cream" />
+                  <Linkedin className="w-4 h-4 text-white/60 group-hover:text-white" />
                 </a>
                 <a
                   href="#"
-                  className="w-12 h-12 rounded-xl bg-cream/5 flex items-center justify-center hover:bg-olive transition-colors duration-300 group"
+                  className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center hover:bg-accent transition-colors duration-300 group"
                 >
-                  <MessageCircle className="w-5 h-5 text-cream/70 group-hover:text-cream" />
+                  <MessageCircle className="w-4 h-4 text-white/60 group-hover:text-white" />
                 </a>
               </div>
             </div>
           </div>
 
           {/* Bottom Bar */}
-          <div className="border-t border-cream/10 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-cream/50">
+          <div className="border-t border-white/10 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center gap-3">
+            <p className="text-caption text-white/40">
               © 2024 TDSC. All rights reserved.
             </p>
-            <div className="flex items-center gap-6">
-              <a href="#" className="text-sm text-cream/50 hover:text-olive-light transition-colors">
-                Privacy Policy
+            <div className="flex items-center gap-5">
+              <a href="#" className="text-caption text-white/40 hover:text-accent transition-colors">
+                Privacy
               </a>
-              <a href="#" className="text-sm text-cream/50 hover:text-olive-light transition-colors">
-                Terms of Service
+              <a href="#" className="text-caption text-white/40 hover:text-accent transition-colors">
+                Terms
               </a>
             </div>
           </div>

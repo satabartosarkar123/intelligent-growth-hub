@@ -51,24 +51,14 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Brand colors
-        "sea-glass": {
-          DEFAULT: "hsl(var(--sea-glass))",
-          light: "hsl(var(--sea-glass-light))",
-          dark: "hsl(var(--sea-glass-dark))",
-        },
-        "sandstone": {
-          DEFAULT: "hsl(var(--pale-sandstone))",
-          light: "hsl(var(--pale-sandstone-light))",
-        },
-        "olive": {
-          DEFAULT: "hsl(var(--olive-grove))",
-          dark: "hsl(var(--olive-grove-dark))",
-          light: "hsl(var(--olive-grove-light))",
-        },
+        // Refined palette
+        "silver-sage": "hsl(var(--silver-sage))",
+        "driftwood": "hsl(var(--driftwood))",
+        "seaside": "hsl(var(--seaside-haze))",
+        "cocoa": "hsl(var(--cocoa-truffle))",
+        "golden": "hsl(var(--golden-cedar))",
         charcoal: "hsl(var(--charcoal))",
         slate: "hsl(var(--slate))",
-        cream: "hsl(var(--cream))",
       },
       borderRadius: {
         lg: "var(--radius)",
