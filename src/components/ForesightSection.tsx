@@ -5,78 +5,67 @@ import AnimatedSection from './AnimatedSection';
 const features = [
   {
     icon: Zap,
-    title: 'Real-Time Data Integration',
-    description: 'Seamlessly connect all your data sources for instant insights.',
+    title: 'Real-Time Integration',
+    description: 'Connect data sources instantly.',
   },
   {
     icon: BarChart3,
-    title: 'SEO Maturity Grader',
-    description: 'Analyze and optimize your digital presence automatically.',
+    title: 'SEO Grader',
+    description: 'Optimize digital presence.',
   },
   {
     icon: Sparkles,
     title: 'Automation Dashboard',
-    description: 'Visualize and control all your automated workflows in one place.',
+    description: 'Control workflows in one place.',
   },
 ];
 
 const ForesightSection = () => {
   return (
-    <AnimatedSection id="foresight" className="py-24 md:py-32 relative overflow-hidden">
-      {/* Glass morphism background elements */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-olive/20 rounded-full blur-3xl animate-blob" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-sea-glass/30 rounded-full blur-3xl animate-blob" style={{ animationDelay: '2s' }} />
-      <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-sandstone/20 rounded-full blur-3xl animate-blob" style={{ animationDelay: '4s' }} />
+    <AnimatedSection id="foresight" className="py-20 md:py-28 bg-gradient-to-b from-muted/30 to-background relative overflow-hidden">
+      {/* Glass bubbles */}
+      <div className="bubble w-36 h-36 top-16 left-[8%] bubble-rise hidden lg:block" />
+      <div className="bubble w-28 h-28 bottom-24 right-[12%] bubble-float hidden lg:block" style={{ animationDelay: '3s' }} />
+      <div className="bubble w-20 h-20 top-1/2 right-[8%] bubble-rise hidden md:block" style={{ animationDelay: '1.5s' }} />
       
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div>
-            <span className="inline-block px-4 py-1.5 rounded-full glass-card text-olive-dark text-sm font-medium mb-6">
-              Introducing Foresight
-            </span>
+            <div className="golden-line mb-4" />
             
-            <h2 className="text-4xl md:text-6xl font-serif font-semibold text-foreground mb-6 leading-tight">
+            <h2 className="text-display font-serif text-foreground mb-4 leading-tight">
               Automate{' '}
               <span className="gradient-text">Intelligently</span>.
-              <br />
-              Grow{' '}
-              <span className="gradient-text">Exponentially</span>.
             </h2>
             
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-lg">
-              Foresight is our flagship product — a next-generation automation platform 
-              designed for businesses ready to scale intelligently.
+            <p className="text-body text-muted-foreground mb-6 max-w-md">
+              Next-generation automation for businesses ready to scale.
             </p>
 
-            <div className="flex flex-wrap gap-4">
-              <Button variant="hero" size="xl">
-                Book Free Trial
-              </Button>
-              <Button variant="glass" size="xl">
-                <span>Explore Features</span>
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
-            </div>
+            <Button variant="hero" size="lg">
+              Book Free Trial
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </Button>
           </div>
 
           {/* Right - Feature Cards */}
-          <div className="space-y-6">
+          <div className="space-y-4">
             {features.map((feature, index) => (
               <div
                 key={feature.title}
-                className="glass-card-strong rounded-2xl p-6 hover:shadow-glow transition-all duration-500 hover:-translate-x-2 cursor-pointer group"
-                style={{ animationDelay: `${index * 100}ms` }}
+                className="glass-card-strong rounded-xl p-5 hover:shadow-lg transition-all duration-500 hover:-translate-x-1 cursor-pointer group"
+                style={{ animationDelay: `${index * 80}ms` }}
               >
-                <div className="flex items-start gap-5">
-                  <div className="w-12 h-12 rounded-xl bg-olive/10 flex items-center justify-center group-hover:bg-olive group-hover:text-primary-foreground transition-all duration-300">
-                    <feature.icon className="w-6 h-6 text-olive-dark group-hover:text-primary-foreground" strokeWidth={1.5} />
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-all duration-300">
+                    <feature.icon className="w-5 h-5 text-primary group-hover:text-primary-foreground" strokeWidth={1.5} />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-foreground mb-1">
+                    <h3 className="text-sm font-medium text-foreground">
                       {feature.title}
                     </h3>
-                    <p className="text-muted-foreground">
+                    <p className="text-caption text-muted-foreground">
                       {feature.description}
                     </p>
                   </div>
@@ -84,15 +73,15 @@ const ForesightSection = () => {
               </div>
             ))}
 
-            {/* Stats pill */}
-            <div className="flex items-center gap-6 pt-4">
-              <div className="glass-card rounded-full px-6 py-3">
-                <span className="text-2xl font-bold gradient-text">50+</span>
-                <span className="text-sm text-muted-foreground ml-2">Integrations</span>
+            {/* Stats - minimal */}
+            <div className="flex items-center gap-4 pt-2">
+              <div className="glass-card rounded-full px-4 py-2">
+                <span className="text-lg font-semibold gradient-text">50+</span>
+                <span className="text-caption text-muted-foreground ml-1.5">Integrations</span>
               </div>
-              <div className="glass-card rounded-full px-6 py-3">
-                <span className="text-2xl font-bold gradient-text">99.9%</span>
-                <span className="text-sm text-muted-foreground ml-2">Uptime</span>
+              <div className="glass-card rounded-full px-4 py-2">
+                <span className="text-lg font-semibold gradient-text">99.9%</span>
+                <span className="text-caption text-muted-foreground ml-1.5">Uptime</span>
               </div>
             </div>
           </div>
