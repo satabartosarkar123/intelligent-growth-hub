@@ -6,8 +6,12 @@ import ForesightSection from '@/components/ForesightSection';
 import ServicesSection from '@/components/ServicesSection';
 import PublicationsSection from '@/components/PublicationsSection';
 import Footer from '@/components/Footer';
+import SocialSidebar from '@/components/SocialSidebar';
+import { useScrollReveal } from '@/hooks/useParallax';
 
 const Index = () => {
+  useScrollReveal();
+
   useEffect(() => {
     // Enable smooth scrolling globally
     document.documentElement.style.scrollBehavior = 'smooth';
@@ -19,6 +23,7 @@ const Index = () => {
   return (
     <main className="min-h-screen bg-background overflow-x-hidden">
       <Navbar />
+      <SocialSidebar />
       <HeroSection />
       <DifferentiatorSection />
       <ForesightSection />
