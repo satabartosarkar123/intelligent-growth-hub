@@ -57,27 +57,22 @@ const ForesightSection = () => {
           <div className="animate-on-scroll">
             <div className="w-10 h-0.5 bg-gradient-to-r from-cerule to-sagace mb-4" />
             
+            <p className="text-xs text-cerule uppercase tracking-widest mb-2">Introducing</p>
             <h2 className="text-2xl md:text-3xl font-serif text-white leading-tight tracking-tight mb-3">
-              Automate{' '}
-              <span className="text-cerule">Intelligently</span>.
+              Foresight{' '}
+              <span className="text-cerule">by TDSC</span>
             </h2>
             
             <p className="text-sm text-white/70 mb-5 max-w-sm">
               Next-gen automation for scaling businesses.
             </p>
 
-            <div className="flex gap-3">
-              <Button className="bg-cerule text-white hover:bg-cerule/90 text-xs px-5 py-2 h-auto">
-                Book Free Trial
+            <Button asChild className="bg-cerule text-white hover:bg-cerule/90 text-xs px-5 py-2 h-auto">
+              <Link to="/foresight">
+                Explore Foresight
                 <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
-              </Button>
-              <Button asChild variant="outline" className="border-cerule/40 text-white hover:bg-cerule/20 text-xs px-5 py-2 h-auto">
-                <Link to="/foresight">
-                  Explore Foresight
-                  <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
-                </Link>
-              </Button>
-            </div>
+              </Link>
+            </Button>
           </div>
 
           {/* Right - Feature Cards */}
