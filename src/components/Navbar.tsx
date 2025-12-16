@@ -73,13 +73,6 @@ const Navbar = () => {
               <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-accent group-hover:w-full transition-all duration-300" />
             </button>
           ))}
-          <Link
-            to="/foresight"
-            className="text-xs font-medium tracking-wide text-accent hover:text-primary transition-colors duration-300 relative group uppercase"
-          >
-            Explore Foresight
-            <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-accent group-hover:w-full transition-all duration-300" />
-          </Link>
         </div>
 
         {/* CTA Button */}
@@ -118,13 +111,6 @@ const Navbar = () => {
               {link.label}
             </button>
           ))}
-          <Link
-            to="/foresight"
-            onClick={() => setIsMobileMenuOpen(false)}
-            className="text-sm font-medium text-accent hover:text-primary transition-colors py-1.5"
-          >
-            Explore Foresight
-          </Link>
           <Button variant="hero" size="sm" className="mt-2" onClick={() => scrollToSection('#contact')}>
             Contact
           </Button>
