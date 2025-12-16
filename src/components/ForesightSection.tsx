@@ -1,5 +1,6 @@
 import { Sparkles, BarChart3, Zap, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 import AnimatedSection from './AnimatedSection';
 import { useParallax } from '@/hooks/useParallax';
 
@@ -65,10 +66,18 @@ const ForesightSection = () => {
               Next-gen automation for scaling businesses.
             </p>
 
-            <Button className="bg-cerule text-white hover:bg-cerule/90 text-xs px-5 py-2 h-auto">
-              Book Free Trial
-              <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
-            </Button>
+            <div className="flex gap-3">
+              <Button className="bg-cerule text-white hover:bg-cerule/90 text-xs px-5 py-2 h-auto">
+                Book Free Trial
+                <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
+              </Button>
+              <Button asChild variant="outline" className="border-cerule/40 text-white hover:bg-cerule/20 text-xs px-5 py-2 h-auto">
+                <Link to="/foresight">
+                  Explore Foresight
+                  <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
+                </Link>
+              </Button>
+            </div>
           </div>
 
           {/* Right - Feature Cards */}
