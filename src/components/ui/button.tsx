@@ -19,7 +19,7 @@ const buttonVariants = cva(
         ghost: "hover:bg-muted/50 hover:text-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         // Refined brand variants
-        hero: "bg-gradient-to-r from-primary to-accent text-primary-foreground font-medium shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0",
+        hero: "bg-gradient-to-r from-primary to-accent text-white font-medium shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0",
         glass: "glass-card text-foreground hover:shadow-md hover:-translate-y-0.5 border-0",
         "glass-primary": "glass-card-strong text-primary font-medium hover:shadow-lg hover:-translate-y-0.5",
         accent: "bg-accent text-accent-foreground hover:bg-accent/90 shadow-sm",
