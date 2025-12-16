@@ -51,14 +51,11 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Refined palette
-        "silver-sage": "hsl(var(--silver-sage))",
-        "driftwood": "hsl(var(--driftwood))",
-        "seaside": "hsl(var(--seaside-haze))",
-        "cocoa": "hsl(var(--cocoa-truffle))",
-        "golden": "hsl(var(--golden-cedar))",
-        charcoal: "hsl(var(--charcoal))",
-        slate: "hsl(var(--slate))",
+        // Förena palette
+        "nordique": "hsl(var(--nordique))",
+        "cerule": "hsl(var(--cerule))",
+        "sagace": "hsl(var(--sagace))",
+        "turquin": "hsl(var(--turquin))",
       },
       borderRadius: {
         lg: "var(--radius)",
