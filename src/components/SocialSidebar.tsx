@@ -7,7 +7,7 @@ const socialLinks = [
   { icon: Instagram, label: 'Instagram', url: 'https://instagram.com', color: 'hover:text-[#E4405F]' },
   { icon: Facebook, label: 'Facebook', url: 'https://facebook.com', color: 'hover:text-[#1877F2]' },
   { icon: Youtube, label: 'YouTube', url: 'https://youtube.com', color: 'hover:text-[#FF0000]' },
-  { icon: Mail, label: 'Email', url: 'mailto:hello@tdsc.com', color: 'hover:text-primary' },
+  { icon: Mail, label: 'Email', url: 'mailto:hello@tdsc.com', color: 'hover:text-cerule' },
 ];
 
 const SocialSidebar = () => {
@@ -18,12 +18,7 @@ const SocialSidebar = () => {
       {/* Trigger Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex flex-col items-center gap-2 p-3 rounded-l-xl cursor-pointer transition-all duration-300 group"
-        style={{
-          background: 'linear-gradient(135deg, hsl(222 80% 9%) 0%, hsl(222 70% 14%) 100%)',
-          border: '1px solid hsl(210 100% 74% / 0.3)',
-          borderRight: 'none',
-        }}
+        className="flex flex-col items-center gap-2 p-3 rounded-l-xl cursor-pointer transition-all duration-300 group bg-turquin border border-cerule/30 border-r-0"
         aria-label="Toggle social links"
       >
         {isOpen ? (
@@ -41,14 +36,9 @@ const SocialSidebar = () => {
 
       {/* Social Panel */}
       <div 
-        className={`absolute right-full top-0 p-4 rounded-l-xl transition-all duration-300 ${
+        className={`absolute right-full top-0 p-4 rounded-l-xl transition-all duration-300 bg-turquin border border-cerule/30 border-r-0 ${
           isOpen ? 'opacity-100 pointer-events-auto translate-x-0' : 'opacity-0 pointer-events-none translate-x-5'
         }`}
-        style={{
-          background: 'linear-gradient(135deg, hsl(222 80% 9%) 0%, hsl(222 70% 14%) 100%)',
-          border: '1px solid hsl(210 100% 74% / 0.3)',
-          borderRight: 'none',
-        }}
       >
         <div className="flex flex-col gap-4">
           <h4 className="text-xs font-medium text-white/90 whitespace-nowrap">
