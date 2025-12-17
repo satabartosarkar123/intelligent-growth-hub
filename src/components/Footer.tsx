@@ -9,6 +9,9 @@ const Footer = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    organisation: '',
+    phone: '',
+    queryType: '',
     message: '',
   });
 
@@ -22,7 +25,7 @@ const Footer = () => {
       {/* Background elements */}
       <div className="absolute top-0 right-0 w-80 h-80 bg-cerule/10 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-sagace/5 rounded-full blur-3xl" />
-      
+
       <AnimatedSection className="py-16 md:py-20">
         <div className="container mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12">
@@ -38,6 +41,7 @@ const Footer = () => {
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-4">
+                {/* Row 1: Name & Email */}
                 <div className="grid md:grid-cols-2 gap-4">
                   <Input
                     placeholder="Name"
@@ -53,6 +57,45 @@ const Footer = () => {
                     className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-cerule h-10 rounded-lg text-sm"
                   />
                 </div>
+
+                {/* Row 2: Organisation & Phone */}
+                <div className="grid md:grid-cols-2 gap-4">
+                  <Input
+                    placeholder="Organisation"
+                    value={formData.organisation}
+                    onChange={(e) => setFormData({ ...formData, organisation: e.target.value })}
+                    className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-cerule h-10 rounded-lg text-sm"
+                  />
+                  <Input
+                    type="tel"
+                    placeholder="Phone Number"
+                    value={formData.phone}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-cerule h-10 rounded-lg text-sm"
+                  />
+                </div>
+
+                {/* Row 3: Query Type */}
+                <select
+                  value={formData.queryType}
+                  onChange={(e) => setFormData({ ...formData, queryType: e.target.value })}
+                  className="w-full bg-white/10 border border-white/20 text-white h-10 rounded-lg text-sm px-3 focus:border-cerule focus:outline-none focus:ring-1 focus:ring-cerule appearance-none cursor-pointer"
+                  style={{
+                    backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E")`,
+                    backgroundRepeat: 'no-repeat',
+                    backgroundPosition: 'right 12px center',
+                    backgroundSize: '16px'
+                  }}
+                >
+                  <option value="" disabled className="text-gray-500">Select Query Type</option>
+                  <option value="general" className="bg-turquin text-white">General Inquiry</option>
+                  <option value="demo" className="bg-turquin text-white">Request a Demo</option>
+                  <option value="partnership" className="bg-turquin text-white">Partnership</option>
+                  <option value="support" className="bg-turquin text-white">Support</option>
+                  <option value="other" className="bg-turquin text-white">Other</option>
+                </select>
+
+                {/* Row 4: Message */}
                 <Textarea
                   placeholder="Message..."
                   value={formData.message}
@@ -75,7 +118,7 @@ const Footer = () => {
                 </div>
                 <span className="text-xl font-serif font-medium text-white">TDSC</span>
               </div>
-              
+
               <p className="text-body text-white/70 mb-6 max-w-xs">
                 Intelligent automation for business growth.
               </p>
@@ -117,7 +160,7 @@ const Footer = () => {
           {/* Bottom Bar */}
           <div className="border-t border-white/15 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center gap-3">
             <p className="text-caption text-white/50">
-              © 2024 TDSC. All rights reserved.
+              © 2025 TDSC. All rights reserved.
             </p>
             <div className="flex items-center gap-5">
               <a href="#" className="text-caption text-white/50 hover:text-cerule transition-colors">

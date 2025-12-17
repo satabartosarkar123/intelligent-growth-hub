@@ -55,16 +55,16 @@ const Foresight = () => {
   return (
     <main className="min-h-screen bg-background overflow-x-hidden">
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="pt-32 pb-20 relative overflow-hidden">
         <div className="absolute top-20 left-10 w-72 h-72 bg-olive/20 rounded-full blur-3xl animate-blob" />
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-sea-glass/30 rounded-full blur-3xl animate-blob" style={{ animationDelay: '2s' }} />
-        
+
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <span className="inline-block px-4 py-1.5 rounded-full glass-card text-olive-dark text-sm font-medium mb-6">
-              Foresight by TDSC
+              4Sight by TDSC
             </span>
             <h1 className="text-4xl md:text-6xl font-serif font-semibold text-foreground mb-6 leading-tight">
               Automate <span className="gradient-text">Intelligently</span>.
@@ -125,11 +125,10 @@ const Foresight = () => {
             {pricingPlans.map((plan, i) => (
               <div
                 key={i}
-                className={`rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 ${
-                  plan.highlighted
+                className={`rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 ${plan.highlighted
                     ? 'glass-card-strong shadow-glow border-2 border-olive/30'
                     : 'glass-card'
-                }`}
+                  }`}
               >
                 {plan.highlighted && (
                   <span className="inline-block px-3 py-1 rounded-full bg-olive text-primary-foreground text-xs font-medium mb-4">
@@ -181,9 +180,8 @@ const Foresight = () => {
                   )}
                 </div>
                 <div
-                  className={`px-5 overflow-hidden transition-all duration-300 ${
-                    openFaq === i ? 'pb-5 max-h-40' : 'max-h-0'
-                  }`}
+                  className={`px-5 overflow-hidden transition-all duration-300 ${openFaq === i ? 'pb-5 max-h-40' : 'max-h-0'
+                    }`}
                 >
                   <p className="text-muted-foreground text-sm">{faq.a}</p>
                 </div>

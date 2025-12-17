@@ -1,5 +1,5 @@
 import { Sparkles, BarChart3, Zap, ArrowRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { HoverBorderGradient } from '@/components/ui/hover-border-gradient';
 import { Link } from 'react-router-dom';
 import AnimatedSection from './AnimatedSection';
 import { useParallax } from '@/hooks/useParallax';
@@ -26,72 +26,76 @@ const ForesightSection = () => {
   const parallaxOffset = useParallax(0.2);
 
   return (
-    <AnimatedSection id="foresight" className="py-16 md:py-24 relative overflow-hidden">
+    <AnimatedSection id="foresight" className="py-24 md:py-32 lg:py-40 relative overflow-hidden">
       {/* Dark contrast background */}
       <div className="absolute inset-0 bg-turquin" />
-      
-      {/* Parallax floating orbs */}
-      <div 
-        className="absolute w-72 h-72 rounded-full bg-cerule/15 blur-3xl top-0 left-1/4"
-        style={{ 
+
+      {/* Parallax floating orbs - larger */}
+      <div
+        className="absolute w-96 h-96 rounded-full bg-cerule/20 blur-3xl -top-20 left-1/4"
+        style={{
           transform: `translateY(${parallaxOffset}px)`,
           animation: 'pulse-soft 4s ease-in-out infinite'
         }}
       />
-      <div 
-        className="absolute w-56 h-56 rounded-full bg-sagace/10 blur-3xl bottom-10 right-1/4"
-        style={{ 
+      <div
+        className="absolute w-80 h-80 rounded-full bg-sagace/15 blur-3xl bottom-0 right-1/4"
+        style={{
           transform: `translateY(${parallaxOffset * 0.7}px)`,
           animation: 'pulse-soft 5s ease-in-out infinite',
           animationDelay: '2s'
         }}
       />
-      <div 
-        className="absolute w-40 h-40 rounded-full bg-cerule/10 blur-2xl top-1/2 right-[10%]"
+      <div
+        className="absolute w-64 h-64 rounded-full bg-cerule/15 blur-2xl top-1/2 right-[5%]"
         style={{ transform: `translateY(${parallaxOffset * 1.2}px)` }}
       />
-      
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-10 items-center">
+
+      <div className="container mx-auto px-6 lg:px-8 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Content */}
-          <div className="animate-on-scroll">
-            <div className="w-10 h-0.5 bg-gradient-to-r from-cerule to-sagace mb-4" />
-            
-            <p className="text-xs text-cerule uppercase tracking-widest mb-2">Introducing</p>
-            <h2 className="text-2xl md:text-3xl font-serif text-white leading-tight tracking-tight mb-3">
-              Foresight{' '}
+          <div className="animate-on-scroll lg:pr-8">
+            <div className="w-16 h-1 bg-gradient-to-r from-cerule to-sagace mb-6 rounded-full" />
+
+            <p className="text-sm md:text-base text-cerule uppercase tracking-[0.2em] mb-4 font-medium">Introducing</p>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-white leading-tight tracking-tight mb-6">
+              4Sight{' '}
               <span className="text-cerule">by TDSC</span>
             </h2>
-            
-            <p className="text-sm text-white/70 mb-5 max-w-sm">
-              Next-gen automation for scaling businesses.
+
+            <p className="text-lg md:text-xl text-white/80 mb-8 max-w-lg leading-relaxed">
+              Next-gen automation platform for scaling businesses with AI-powered insights.
             </p>
 
-            <Button asChild className="bg-cerule text-white hover:bg-cerule/90 text-xs px-5 py-2 h-auto">
-              <Link to="/foresight">
-                Explore Foresight
-                <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
-              </Link>
-            </Button>
+            <Link to="/foresight">
+              <HoverBorderGradient
+                containerClassName="rounded-full"
+                as="div"
+                className="bg-white text-black flex items-center space-x-2 cursor-pointer"
+              >
+                <span>Explore 4Sight</span>
+                <ArrowRight className="w-5 h-5" />
+              </HoverBorderGradient>
+            </Link>
           </div>
 
           {/* Right - Feature Cards */}
-          <div className="space-y-3">
+          <div className="space-y-5">
             {features.map((feature, index) => (
               <div
                 key={feature.title}
-                className="animate-on-scroll bg-white/5 backdrop-blur-sm border border-cerule/15 rounded-lg p-4 hover:border-cerule/40 transition-all duration-300 hover:-translate-x-1 cursor-pointer group"
-                style={{ animationDelay: `${index * 80}ms` }}
+                className="animate-on-scroll bg-white/8 backdrop-blur-md border border-cerule/20 rounded-2xl p-6 lg:p-8 hover:border-cerule/50 hover:bg-white/12 transition-all duration-300 hover:-translate-x-2 cursor-pointer group"
+                style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-md bg-cerule/15 flex items-center justify-center group-hover:bg-cerule transition-all duration-300">
-                    <feature.icon className="w-4 h-4 text-cerule group-hover:text-white" strokeWidth={1.5} />
+                <div className="flex items-center gap-5">
+                  <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-xl bg-cerule/20 flex items-center justify-center group-hover:bg-cerule transition-all duration-300 flex-shrink-0">
+                    <feature.icon className="w-7 h-7 lg:w-8 lg:h-8 text-cerule group-hover:text-white transition-colors" strokeWidth={1.5} />
                   </div>
                   <div>
-                    <h3 className="text-xs font-medium text-white">
+                    <h3 className="text-lg lg:text-xl font-semibold text-white mb-1">
                       {feature.title}
                     </h3>
-                    <p className="text-[10px] text-white/60">
+                    <p className="text-sm lg:text-base text-white/70">
                       {feature.description}
                     </p>
                   </div>
@@ -100,14 +104,14 @@ const ForesightSection = () => {
             ))}
 
             {/* Stats */}
-            <div className="flex items-center gap-3 pt-2">
-              <div className="bg-white/5 border border-sagace/30 rounded-full px-3 py-1.5">
-                <span className="text-sm font-medium text-cerule">50+</span>
-                <span className="text-[10px] text-white/60 ml-1">Integrations</span>
+            <div className="flex items-center gap-4 pt-4">
+              <div className="bg-white/8 border border-sagace/40 rounded-full px-6 py-3 backdrop-blur-sm">
+                <span className="text-xl lg:text-2xl font-bold text-cerule">50+</span>
+                <span className="text-sm text-white/70 ml-2">Integrations</span>
               </div>
-              <div className="bg-white/5 border border-sagace/30 rounded-full px-3 py-1.5">
-                <span className="text-sm font-medium text-cerule">99.9%</span>
-                <span className="text-[10px] text-white/60 ml-1">Uptime</span>
+              <div className="bg-white/8 border border-sagace/40 rounded-full px-6 py-3 backdrop-blur-sm">
+                <span className="text-xl lg:text-2xl font-bold text-cerule">99.9%</span>
+                <span className="text-sm text-white/70 ml-2">Uptime</span>
               </div>
             </div>
           </div>

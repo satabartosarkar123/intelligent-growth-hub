@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { HoverBorderGradient } from '@/components/ui/hover-border-gradient';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
@@ -37,18 +37,17 @@ const Navbar = () => {
 
   const navLinks = [
     { label: 'About', href: '#about' },
-    { label: 'Foresight', href: '#foresight' },
+    { label: '4Sight', href: '#foresight' },
     { label: 'Services', href: '#services' },
     { label: 'Publications', href: '#publications' },
   ];
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
-          ? 'py-2.5 glass-card-strong'
-          : 'py-4 bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
+        ? 'py-2.5 glass-card-strong'
+        : 'py-4 bg-transparent'
+        }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
@@ -62,24 +61,30 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-6">
+        <div className="hidden md:flex items-center gap-3">
           {navLinks.map((link) => (
-            <button
+            <HoverBorderGradient
               key={link.label}
+              containerClassName="rounded-full"
+              as="button"
+              className="bg-white text-black flex items-center"
               onClick={() => scrollToSection(link.href)}
-              className="text-xs font-medium tracking-wide text-muted-foreground hover:text-primary transition-colors duration-300 relative group uppercase"
             >
-              {link.label}
-              <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-accent group-hover:w-full transition-all duration-300" />
-            </button>
+              <span className="text-xs font-medium tracking-wide uppercase">{link.label}</span>
+            </HoverBorderGradient>
           ))}
         </div>
 
         {/* CTA Button */}
         <div className="hidden md:block">
-          <Button variant="hero" size="sm" onClick={() => scrollToSection('#contact')}>
-            Contact
-          </Button>
+          <HoverBorderGradient
+            containerClassName="rounded-full"
+            as="button"
+            className="bg-white text-black flex items-center space-x-2"
+            onClick={() => scrollToSection('#contact')}
+          >
+            <span>Contact</span>
+          </HoverBorderGradient>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -97,23 +102,29 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden absolute top-full left-0 right-0 glass-card-strong overflow-hidden transition-all duration-500 ${
-          isMobileMenuOpen ? 'max-h-80 py-4' : 'max-h-0 py-0'
-        }`}
+        className={`md:hidden absolute top-full left-0 right-0 glass-card-strong overflow-hidden transition-all duration-500 ${isMobileMenuOpen ? 'max-h-80 py-4' : 'max-h-0 py-0'
+          }`}
       >
         <div className="container mx-auto px-6 flex flex-col gap-3">
           {navLinks.map((link) => (
-            <button
+            <HoverBorderGradient
               key={link.label}
+              containerClassName="rounded-full w-full"
+              as="button"
+              className="bg-white text-black flex items-center justify-center w-full"
               onClick={() => scrollToSection(link.href)}
-              className="text-sm font-medium text-foreground hover:text-primary transition-colors py-1.5 text-left"
             >
-              {link.label}
-            </button>
+              <span className="text-sm font-medium">{link.label}</span>
+            </HoverBorderGradient>
           ))}
-          <Button variant="hero" size="sm" className="mt-2" onClick={() => scrollToSection('#contact')}>
-            Contact
-          </Button>
+          <HoverBorderGradient
+            containerClassName="rounded-full mt-2"
+            as="button"
+            className="bg-white text-black flex items-center space-x-2 w-full justify-center"
+            onClick={() => scrollToSection('#contact')}
+          >
+            <span>Contact</span>
+          </HoverBorderGradient>
         </div>
       </div>
     </nav>

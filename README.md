@@ -284,4 +284,4 @@ const navLinks = [
 
 ---
 
-© 2024 TDSC. All rights reserved.
+© 2025 TDSC. All rights reserved.
